@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajes</title>
+</head>
+
+<body>
+    <div id="formulario">
+        <h1>¿A dónde deseas viajar?</h1>
+        <form id="busqueda-viaje">
+            <input type="text" id="destino" />
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+
+    <div id="opciones" style="display: none;">
+        <!-- Aquí irán las opciones después -->
+        <h2 id="mensaje"></h2>
+       
+          <ul>
+  <li>moto <a href="https://es.wikipedia.org/wiki/Cartagena_de_Indias" target="_blank">+</a></li>
+  <li>carro <a href="https://es.wikipedia.org/wiki/Cartagena_de_Indias" target="_blank">+</a></li>
+  <li>particular <a href="https://es.wikipedia.org/wiki/Cartagena_de_Indias" target="_blank">+</a></li>
+  <li>moto <a href="https://es.wikipedia.org/wiki/Cartagena_de_Indias" target="_blank">+</a></li>
+  <li>bus <a href="https://es.wikipedia.org/wiki/Cartagena_de_Indias" target="_blank">+</a></li>
+</ul>
+
+     
+        <!-- Luego puedes poner más cosas aquí -->
+    </div>
+</body>
+<script>
+    const formulario = document.getElementById("busqueda-viaje");
+    const seccionFormulario = document.getElementById("formulario");
+    const seccionOpciones = document.getElementById("opciones");
+    const mensaje = document.getElementById("mensaje");
+
+    formulario.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const destino = document.getElementById("destino").value;
+
+        // Oculta el formulario
+        seccionFormulario.style.display = "none";
+
+        // Muestra la sección de opciones
+        seccionOpciones.style.display = "block";
+
+        // Cambia el texto con el destino
+        mensaje.innerHTML = `Opciones disponibles para ir actualmente a <strong>${destino}</strong>:`;
+
+
+    });
+</script>
+
+</html>
