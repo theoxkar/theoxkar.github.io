@@ -1,59 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viajes</title>
+  <script defer src="reco_datos.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viaj3s</title>
 </head>
-
 <body>
-    <div id="formulario">
-        <h1>¿A dónde deseas viajar?</h1>
-        <form id="busqueda-viaje">
-            <input type="text" id="destino" />
-            <button type="submit">Buscar</button>
-        </form>
-    </div>
 
-    <div id="opciones" style="display: none;">
-        <!-- Aquí irán las opciones después -->
-        <h2 id="mensaje"></h2>
-       
-          <ul>
-  <li>moto <a href="https://es.wikipedia.org/wiki/Cartagena_de_Indias" target="_blank">+</a></li>
-  <li>carro <a href="https://es.wikipedia.org/wiki/Cartagena_de_Indias" target="_blank">+</a></li>
-  <li>particular <a href="https://es.wikipedia.org/wiki/Cartagena_de_Indias" target="_blank">+</a></li>
-  <li>moto <a href="https://es.wikipedia.org/wiki/Cartagena_de_Indias" target="_blank">+</a></li>
-  <li>bus <a href="https://es.wikipedia.org/wiki/Cartagena_de_Indias" target="_blank">+</a></li>
-</ul>
+  <!-- SELECCIÓN DE TIPO DE USUARIO -->
+  <div id="tipo_usu">
+    <h1>Hola bienvenido, ¿qué tipo de usuario eres?</h1>
+    <button id="btnViajero">Viajero</button>
+    <button id="btnTransportador">Transportador</button>
+  </div>
 
-     
-        <!-- Luego puedes poner más cosas aquí -->
-    </div>
+  <!-- SELECCIÓN DE UBICACIÓN DE ORIGEN -->
+  <div id="ubicacion_origen" style="display: none;">
+    <h1>¿Dónde te encuentras?</h1>
+    <label>Departamento:</label>
+    <select id="selec_departamento_origen"></select>
+    <label>Ciudad:</label>
+    <select id="selec_ciudad_origen"></select>
+    <button id="btnOrigenListo">Siguiente</button>
+  </div>
+
+  <!-- SELECCIÓN DE UBICACIÓN DE DESTINO -->
+  <div id="ubicacion_destino" style="display: none;">
+    <h1>¿A dónde te diriges?</h1>
+    <label>Departamento:</label>
+    <select id="selec_departamento_destino"></select>
+    <label>Ciudad:</label>
+    <select id="selec_ciudad_destino"></select>
+    <button id="btnGuardarViaje">Guardar viaje</button>
+  </div>
+
 </body>
-<script>
-    const formulario = document.getElementById("busqueda-viaje");
-    const seccionFormulario = document.getElementById("formulario");
-    const seccionOpciones = document.getElementById("opciones");
-    const mensaje = document.getElementById("mensaje");
-
-    formulario.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const destino = document.getElementById("destino").value;
-
-        // Oculta el formulario
-        seccionFormulario.style.display = "none";
-
-        // Muestra la sección de opciones
-        seccionOpciones.style.display = "block";
-
-        // Cambia el texto con el destino
-        mensaje.innerHTML = `Opciones disponibles para ir actualmente a <strong>${destino}</strong>:`;
-
-
-    });
-</script>
-
 </html>
